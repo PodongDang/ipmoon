@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service // Autowired로 연결시키기 위하여
+//@Service // Autowired로 연결시키기 위하여
 public class MemberService {
     //ctrl + shift + t로 테스트 만들기
     private final MemberRepository memberRepository;
 
-    @Autowired //MemoryMemberRepository
+    //@Autowired //MemoryMemberRepository
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
