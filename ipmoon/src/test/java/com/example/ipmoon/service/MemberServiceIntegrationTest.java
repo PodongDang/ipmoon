@@ -1,6 +1,7 @@
 package com.example.ipmoon.service;
 
 import com.example.ipmoon.domain.Member;
+import com.example.ipmoon.repository.MemberRepository;
 import com.example.ipmoon.repository.MemoryMemberRepository;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.AfterEach;
@@ -18,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class MemberServiceIntegrationTest {
 
     @Autowired MemberService memberService;
-    @Autowired MemoryMemberRepository memberRepository;
+    @Autowired MemberRepository memberRepository;
     //test 함수 이름은 한글로 만들어도됨
     @Test
     void 회원가입() {
@@ -35,15 +36,14 @@ class MemberServiceIntegrationTest {
     }
 
     @Test
-    @Commit
     public void 중복_회원_예외() {
 
         //given
         Member member1 = new Member();
-        member1.setName("spring1");
+        member1.setName("spring50");
 
         Member member2 = new Member();
-        member2.setName("spring1");
+        member2.setName("spring");
         //when
         memberService.join(member1);
         IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
