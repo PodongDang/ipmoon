@@ -3,14 +3,18 @@ package com.example.ipmoon.service;
 import com.example.ipmoon.domain.Member;
 import com.example.ipmoon.repository.MemberRepository;
 import com.example.ipmoon.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service // Autowired로 연결시키기 위하여
 public class MemberService {
     //ctrl + shift + t로 테스트 만들기
     private final MemberRepository memberRepository;
 
+    @Autowired //MemoryMemberRepository
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

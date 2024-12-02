@@ -1,9 +1,11 @@
 package com.example.ipmoon.repository;
 
 import com.example.ipmoon.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
+@Repository // for Autowired
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new HashMap<>();
