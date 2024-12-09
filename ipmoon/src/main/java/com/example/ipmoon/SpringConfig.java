@@ -1,5 +1,6 @@
 package com.example.ipmoon;
 
+import com.example.ipmoon.aop.TimeTraceAop;
 import com.example.ipmoon.repository.JpaMemberRepository;
 import com.example.ipmoon.repository.MemberRepository;
 import com.example.ipmoon.service.MemberService;
@@ -22,6 +23,10 @@ public class SpringConfig {
         return new MemberService(memberRepository);
     }
 
+//    @Bean
+//    public TimeTraceAop timeTraceApp() {
+//        return new TimeTraceAop();
+//    }
 //    @Bean
 //    public MemberRepository memberRepository() {
 //        return new JpaMemberRepository(em);
